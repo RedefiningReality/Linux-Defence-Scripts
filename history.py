@@ -21,8 +21,12 @@ if args.setup:
                 if int(ID) < 1000 and int(ID) != 0:
                     shell = "/sbin/nologin "
                 os.system("usermod -s "+shell+user)
-    os.remove("/bin/zsh")
-    os.remove("/bin/dash")
+    
+    if os.path.exists("/bin/zsh"):
+        os.remove("/bin/zsh")
+    if os.path.exists("/bin/dash"):
+        os.remove("/bin/dash")
+    
     os.symlink("/bin/bash", "/bin/sh.bash")
     os.rename("/bin/sh.bash", "/bin/sh")
 
