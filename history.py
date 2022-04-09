@@ -21,9 +21,10 @@ if args.setup:
                 if int(ID) < 1000 and int(ID) != 0:
                     shell = "/sbin/nologin "
                 os.system("usermod -s "+shell+user)
-    os.system("rm /bin/zsh ; rm /bin/dash")
+    os.remove("/bin/zsh")
+    os.remove("/bin/dash")
     os.symlink("/bin/bash", "/bin/sh.bash")
-    os.system("mv /bin/sh.bash /bin/sh")
+    os.rename("/bin/sh.bash", "/bin/sh")
 
 if args.user:
     home_dir = "/home/"+args.user
