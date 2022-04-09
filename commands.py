@@ -11,7 +11,6 @@ def update(command):
 
 update("ls")
 update("cat")
-update("pwd")
 update("nano")
 update("vi")
 update("vim")
