@@ -39,5 +39,5 @@ if args.user:
     
     hist_dir = "/opt/.kernel/"+args.user
     os.makedirs("/opt/.kernel", mode=0o500, exist_ok=True)
-    os.makedirs(hist_dir, mode=Oo500)
+    os.makedirs(hist_dir, mode=0o500)
     os.system("chown "+args.user+":"+args.user+" "+hist_dir)
