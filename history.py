@@ -45,7 +45,7 @@ if args.user:
         file.write("export HISTFILESIZE=")
     
     hist_dir = "/opt/.kernel/"+args.user
-    os.makedirs("/opt/.kernel", mode=0o600, exist_ok=True)
+    os.makedirs("/opt/.kernel", mode=0o755, exist_ok=True)
     
     os.makedirs(hist_dir, mode=0o755, exist_ok=True)
     uid = pwd.getpwnam(args.user).pw_uid
