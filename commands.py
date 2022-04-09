@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 
 content = "#!/bin/bash\n\necho \"Why hello there red team! You are being kicked off. Better luck next time :(\"\nwall \"RED TEAM ACTIVITY\"\ntemp=$(tty)\npkill -9 -t ${temp:5}"
