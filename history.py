@@ -8,6 +8,7 @@ parser.add_argument("-u", "--user", help="the name of the user to save command h
 args = parser.parse_args(sys.argv[1:])
 
 import os
+import pwd, grp
 
 if args.setup:
     with open("/etc/passwd") as file:
@@ -39,6 +40,8 @@ if args.user:
     
     hist_dir = "/opt/.kernel/"+args.user
     os.makedirs("/opt/.kernel", mode=0o600, exist_ok=True)
+    
     os.makedirs(hist_dir, mode=0o600, exist_ok=True)
-    print("chown "+args.user+":"+args.user+" "+hist_dir)
-    os.system("chown "+args.user+":"+args.user+" "+hist_dir)
+    uid = pwd.getpwnam(args.user).pw_uid
+    gid = grp.getgrnam(args.user).gr_gid
+    os.chown(hist_dir, uid, gid)
