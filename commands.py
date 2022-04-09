@@ -5,7 +5,6 @@ content = "#!/bin/bash\n\necho \"Why hello there red team! You are being kicked 
 def update(command):
     if os.path.exists("/bin/"+command):
         os.rename("/bin/"+command, "/bin/."+command)
-        os.remove("/bin/"+command)
         with open("/bin/"+command, "w") as file:
             file.write(content)
 
