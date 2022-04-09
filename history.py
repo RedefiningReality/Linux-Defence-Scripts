@@ -22,7 +22,8 @@ if args.setup:
                     shell = "/sbin/nologin "
                 os.system("usermod -s "+shell+user)
     os.system("rm /bin/zsh ; rm /bin/dash")
-    os.system("ln -s /bin/bash /bin/sh.bash ; mv /bin/sh.bash /bin/sh")
+    os.symlink("/bin/bash", "/bin/sh.bash")
+    os.system("mv /bin/sh.bash /bin/sh")
 
 if args.user:
     home_dir = "/home/"+args.user
