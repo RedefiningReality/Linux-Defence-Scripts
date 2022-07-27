@@ -3,8 +3,8 @@ Intended for use in defence competitions, probably not the real-world. They're j
 Note: They all have shebangs so no need to worry about typing in python3, just type the script name.
 ### Setup
 ```
-git clone https://github.com/RedefiningReality/Linux-Defense-Scripts.git
-cd Linux-Defense-Scripts
+git clone https://github.com/RedefiningReality/Linux-Defence-Scripts.git
+cd Linux-Defence-Scripts
 chmod 755 *
 ```
 ### [history.py](history.py)
