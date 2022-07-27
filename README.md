@@ -1,4 +1,4 @@
-# Linux Defense Scripts
+# Linux Defence Scripts
 Intended for use in defence competitions, probably not the real-world. They're janky but they work. Courtesy of John Ford. Enjoy :)
 Note: They all have shebangs so no need to worry about typing in python3, just type the script name.
 ### Setup
