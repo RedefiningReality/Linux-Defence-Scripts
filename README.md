@@ -1,15 +1,15 @@
 # Linux Defense Scripts
-Intended for use in defense competitions, probably not the real-world. They're janky but they work. Courtesy of John Ford. Enjoy :)
+Intended for use in defence competitions, probably not the real-world. They're janky but they work. Courtesy of John Ford. Enjoy :)
 Note: They all have shebangs so no need to worry about typing in python3, just type the script name.
 ### Setup
 ```
-git clone https://github.com/TheCatLover/Linux-Defense-Scripts.git
+git clone https://github.com/RedefiningReality/Linux-Defense-Scripts.git
 cd Linux-Defense-Scripts
 chmod 755 *
 ```
 ### [history.py](history.py)
 #### The Idea
-During defense competitions, it's often important to view command history so you know what those pesky attackers have been up to. Fortunately, bash logs command history. Unfortunately, it only logs it on exit, not in realtime, and in a location that's obvious to anyone who knows bash so that they could just delete the file. Also, many distros use shells other than bash, such as dash or zsh.
+During defence competitions, it's often important to view command history so you know what those pesky attackers have been up to. Fortunately, bash logs command history. Unfortunately, it only logs it on exit, not in realtime, and in a location that's obvious to anyone who knows bash so that they could just delete the file. Also, many distros use shells other than bash, such as dash or zsh.
 So here's what you do: Remove all the shells that aren't bash and set every regular user's shell to bash - and while we're at it, let's set users with id less than 1000 to nologin because they shouldn't have access to a shell anyway. Next, change the history to be logged immediately after a command is executed, and finally, change the location of the bash history file to some place the red team won't think of looking.
 #### Usage
 - `history.py -s` ⇒ setup - aka remove all shells other than bash, make /bin/sh point to bash, and set user shells to bash
